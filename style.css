@@ -73,7 +73,7 @@ body {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff; /* Ensures that the container has a background */
+    background-color: #fff;
 }
 
 .slide {
@@ -104,17 +104,16 @@ body {
 }
 
 .prev {
-    left: -1in; /* Adjusts to an inch from the border */
+    left: 10px; /* Moves the button inside the slideshow container */
 }
 
 .next {
-    right: -1in; /* Adjusts to an inch from the border */
+    right: 10px; /* Moves the button inside the slideshow container */
 }
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
-
 
 /* Room Section */
 .room-section {
