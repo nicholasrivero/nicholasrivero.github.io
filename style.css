@@ -97,8 +97,10 @@ body {
     font-weight: bold;
     font-size: 18px;
     transition: 0.3s;
-    border-radius: 0 3px 3px 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Background for visibility */
+    border-radius: 50%;
     user-select: none;
+    transform: translateY(-50%);
 }
 
 .prev {
