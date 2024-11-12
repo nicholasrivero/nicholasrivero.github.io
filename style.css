@@ -51,8 +51,8 @@ body {
     margin-bottom: 10px;
 }
 
-/* Sections */
-.section {
+/* Room Sections */
+.room-section {
     padding: 40px 20px;
     background-color: #fff;
     margin: 20px;
@@ -60,17 +60,23 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.section h2 {
+.room-section h2 {
     font-size: 1.8rem;
     margin-bottom: 15px;
 }
 
-.section img {
+.room-section img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     margin-top: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room-section p {
+    margin-top: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 /* Footer */
