@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <!-- Navigation Bar -->
 <nav class="navbar">
     <div class="logo">Emerald Beach Rentals</div>
@@ -20,10 +21,10 @@
     </ul>
 </nav>
 
-<!-- Hero Section with img-header.jpg as Background -->
+<!-- Hero Section -->
 <section class="hero">
     <div class="hero-content">
-        <h1>Welcome to Emerald Beach Life Rentals</h1>
+        <h1>Welcome to Emerald Beach Room Rentals</h1>
         <p>Experience beautiful coastal living in Destin, FL</p>
         <div class="contact-overlay">
             <p>Available Now! Contact Michelle at <a href="tel:+18503761892">850-376-1892</a></p>
@@ -41,16 +42,15 @@
         <button class="prev" onclick="changeSlide(-1, 'living-room')">&#10094;</button>
         <button class="next" onclick="changeSlide(1, 'living-room')">&#10095;</button>
     </div>
-
     <p>Spacious living area with comfortable seating, open kitchen access, and modern decor, perfect for relaxing or entertaining.</p>
 </section>
 
 <!-- Guest Room Section -->
 <section id="guest-room" class="room-section">
-    <h2>Guest Bedroom </h2>
+    <h2>Guest Bedroom - Available August 1st</h2>
     <div class="slideshow-container">
-        <img class="slide" src="images/guestbedroom.jpeg" alt="Guest Bedroom Image 1">
-        <img class="slide" src="images/guestbathroom.jpeg" alt="Guest Bathroom Image" style="display:none;">
+        <img class="slide" src="images/guestbedroom.jpeg" alt="Guest Bedroom Image 1" style="display: block;">
+        <img class="slide" src="images/guestbathroom.jpeg" alt="Guest Bathroom Image" style="display: none;">
         <button class="prev" onclick="changeSlide(-1, 'guest-room')">&#10094;</button>
         <button class="next" onclick="changeSlide(1, 'guest-room')">&#10095;</button>
     </div>
@@ -59,11 +59,11 @@
 
 <!-- Master Bedroom Section -->
 <section id="master-bedroom" class="room-section">
-    <h2>Master Bedroom </h2>
+    <h2>Master Bedroom - Available June 2025</h2>
     <div class="slideshow-container">
-        <img class="slide" src="images/master1.jpeg" alt="Master Bedroom Image 1">
-        <img class="slide" src="images/masterbr1.jpeg" alt="Master Bedroom Image 2" style="display:none;">
-        <img class="slide" src="images/masterbr2.jpeg" alt="Master Bedroom Image 3" style="display:none;">
+        <img class="slide" src="images/master1.jpeg" alt="Master Bedroom Image 1" style="display: block;">
+        <img class="slide" src="images/masterbr1.jpeg" alt="Master Bedroom Image 2" style="display: none;">
+        <img class="slide" src="images/masterbr2.jpeg" alt="Master Bedroom Image 3" style="display: none;">
         <button class="prev" onclick="changeSlide(-1, 'master-bedroom')">&#10094;</button>
         <button class="next" onclick="changeSlide(1, 'master-bedroom')">&#10095;</button>
     </div>
@@ -72,11 +72,11 @@
 
 <!-- Spacious Studio Section -->
 <section id="studio-suite" class="room-section">
-    <h2>Spacious Studio Suite </h2>
+    <h2>Spacious Studio Suite - Available August 17, 2024</h2>
     <div class="slideshow-container">
-        <img class="slide" src="images/SS1.jpeg" alt="Spacious Studio Image 1">
-        <img class="slide" src="images/SS2.jpeg" alt="Spacious Studio Image 2" style="display:none;">
-        <img class="slide" src="images/SSbr1.jpeg" alt="Spacious Studio Bathroom" style="display:none;">
+        <img class="slide" src="images/SS1.jpeg" alt="Spacious Studio Image 1" style="display: block;">
+        <img class="slide" src="images/SS2.jpeg" alt="Spacious Studio Image 2" style="display: none;">
+        <img class="slide" src="images/SSbr1.jpeg" alt="Spacious Studio Bathroom" style="display: none;">
         <button class="prev" onclick="changeSlide(-1, 'studio-suite')">&#10094;</button>
         <button class="next" onclick="changeSlide(1, 'studio-suite')">&#10095;</button>
     </div>
@@ -90,6 +90,33 @@
 </footer>
 
 <!-- JavaScript for Slideshows -->
-<script src="script.js"></script>
+<script>
+    let slideIndex = {};
+
+    // Function to change the slide in a specific section
+    function changeSlide(n, section) {
+        if (!slideIndex[section]) slideIndex[section] = 0;
+        slideIndex[section] += n;
+        showSlides(slideIndex[section], section);
+    }
+
+    // Function to display the current slide
+    function showSlides(n, section) {
+        const slides = document.querySelectorAll(`#${section} .slide`);
+        if (n >= slides.length) slideIndex[section] = 0;
+        if (n < 0) slideIndex[section] = slides.length - 1;
+        slides.forEach(slide => slide.style.display = "none");
+        slides[slideIndex[section]].style.display = "block";
+    }
+
+    // Initialize each section’s slideshow on page load
+    document.addEventListener("DOMContentLoaded", () => {
+        const sections = ["living-room", "guest-room", "master-bedroom", "studio-suite"];
+        sections.forEach(section => {
+            slideIndex[section] = 0; // Start each section with the first slide
+            showSlides(0, section);
+        });
+    });
+</script>
 </body>
 </html>

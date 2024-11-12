@@ -41,7 +41,7 @@ body {
     font-weight: 600;
 }
 
-/* Hero Section with Background Image */
+/* Hero Section */
 .hero {
     position: relative;
     background-image: url('images/img-header.jpg');
@@ -80,7 +80,7 @@ body {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff; /* Ensures that the container has a background */
+    background-color: #fff;
 }
 
 .slide {
@@ -91,7 +91,7 @@ body {
 }
 
 .slide:first-of-type {
-    display: block; /* Ensure the first slide shows by default */
+    display: block;
 }
 
 /* Navigation Buttons */
@@ -99,7 +99,7 @@ body {
     cursor: pointer;
     position: absolute;
     top: 50%;
-    width: 40px; /* Adjusted width for visibility */
+    width: 40px;
     padding: 10px;
     color: white;
     font-weight: bold;
@@ -109,21 +109,21 @@ body {
     border-radius: 50%;
     user-select: none;
     transform: translateY(-50%);
-    z-index: 1; /* Ensure arrows appear above the slideshow images */
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .prev {
-    left: 10px; /* Position the arrow closer to the slideshow container */
+    left: 10px;
 }
 
 .next {
-    right: 10px; /* Position the arrow closer to the slideshow container */
+    right: 10px;
 }
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
-
 
 /* Room Section */
 .room-section {
@@ -143,7 +143,7 @@ body {
 }
 
 .room-section p {
-    margin-top: 10px; /* Adds spacing between the image and the paragraph */
+    margin-top: 10px;
     font-size: 1rem;
     line-height: 1.5;
     color: #333;
@@ -156,4 +156,41 @@ footer {
     color: #fff;
     text-align: center;
     font-family: 'Inter', sans-serif;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 100px 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .room-section {
+        padding: 30px 10px;
+        max-width: 90%;
+    }
+
+    .prev, .next {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
 }
