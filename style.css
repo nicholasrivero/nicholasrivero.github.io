@@ -40,7 +40,7 @@ body {
     font-weight: 600;
 }
 
-/* Hero Section */
+/* Hero Section with Background Image */
 .hero {
     position: relative;
     background-image: url('images/img-header.jpg');
@@ -102,13 +102,11 @@ body {
 }
 
 .prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
+    left: -40px;
 }
 
 .next {
-    right: 0;
-    border-radius: 3px 3px 0 0;
+    right: -40px;
 }
 
 .prev:hover, .next:hover {
