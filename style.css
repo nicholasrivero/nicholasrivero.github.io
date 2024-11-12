@@ -1,36 +1,82 @@
-body {
-    font-family: Arial, sans-serif;
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    padding: 20px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background-image: url('images/IMG_0872.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 20px;
     text-align: center;
 }
 
-section {
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Contact Overlay */
+.contact-overlay {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
-    margin: 10px;
-    background-color: #ffffff;
+    border-radius: 8px;
+    width: 250px;
+    color: #fff;
+    text-align: center;
+}
+
+.contact-overlay h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Sections */
+.section {
+    padding: 40px 20px;
+    background-color: #fff;
+    margin: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #2c3e50;
-    color: #ecf0f1;
+.section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
 }
 
-img {
+.section img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     margin-top: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
 }
